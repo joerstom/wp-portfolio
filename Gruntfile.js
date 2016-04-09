@@ -53,7 +53,17 @@ module.exports = function(grunt) {
           'wp-content/themes/fhpress/style.min.css': 'wp-content/themes/fhpress/style.full.css'
         }
       }
-    }
+    },
+    imagemin: {                          // Task 
+	    dynamic: {                         // Another target 
+	      files: [{
+	        expand: true,                  // Enable dynamic expansion 
+	        cwd: 'wp-content/themes/fhpress/images/src/',                   // Src matches are relative to this path 
+	        src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match 
+	        dest: 'wp-content/themes/fhpress/images/'                  // Destination path prefix 
+	      }]
+	    }
+  	}
 
   });
 
@@ -67,9 +77,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   
   // ============= // CREATE TASKS ========== //
-  grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'less']); 
+  grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'less', 'imagemin']); 
 
 };
