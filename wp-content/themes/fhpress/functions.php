@@ -8,6 +8,9 @@ add_filter('show_admin_bar', '__return_false');
 function fhpress_destyle_descript() {
 	wp_dequeue_style( 'genericons' );
 	wp_dequeue_script( 'jquery' );
+	wp_dequeue_script( 'jquery-migrate' );
+	wp_dequeue_script( 'wp-embed' );
+	wp_dequeue_script( 'wp-emoji-release' );
 }
 add_action( 'wp_print_styles', 'fhpress_destyle_descript', 100 );
 
