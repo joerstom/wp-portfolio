@@ -53,20 +53,15 @@ add_filter( 'xmlrpc_methods', function( $methods ) {
 function fhpress_style_script() {
 	wp_enqueue_style( 
 		'fhpress-style', 
-		get_stylesheet_uri(), 
+		get_stylesheet_directory_uri() . '/style.min.css',
 		array() 
 	);
 	
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script(
 		'fhpressplugins',
-		get_stylesheet_directory_uri() . '/js/plugins.min.js',
+		get_stylesheet_directory_uri() . '/js/final.min.js',
 		array( 'jquery' )
-	);
-	wp_enqueue_script(
-		'readyjs',
-		get_stylesheet_directory_uri() . '/js/ready.js',
-		array( 'jquery', 'fhpressplugins' )
 	);
 }
 add_action( 'wp_enqueue_scripts', 'fhpress_style_script' );
