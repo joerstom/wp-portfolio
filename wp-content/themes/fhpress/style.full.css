@@ -1,0 +1,1110 @@
+/*
+Theme Name: Fast Horse Press
+Description: FastHorse custom theme for wordpress. 
+Author: Joseph Rstom at Fast Horse, Inc.
+Author URI: http://fasthorse.com
+Text Domain: fhpress
+Version: 1.0
+*/
+/* --------------------------------------------------------------
+   Reset - originally based on 
+   Meyer's reset.css
+   http://meyerweb.com/eric/tools/css/reset/ 
+----------------------------------------------------------------- */
+::moz-selection {
+  background-color: #999;
+  color: white;
+}
+::webkit-selection {
+  background-color: #999;
+  color: white;
+}
+::selection {
+  background-color: #999;
+  color: white;
+}
+:focus {
+  outline: 0;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  *behavior: url(js/boxsizing.htc);
+}
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+figcaption,
+hgroup,
+menu,
+header,
+footer,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  font-style: inherit;
+  vertical-align: baseline;
+  white-space: normal;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+article,
+aside,
+canvas,
+figure,
+figure img,
+figcaption,
+hgroup,
+footer,
+header,
+nav,
+section,
+audio,
+video,
+main {
+  display: block;
+}
+a img {
+  border: 0;
+  line-height: 1px;
+}
+figure {
+  position: relative;
+}
+figure img {
+  width: 100%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+textarea {
+  -webkit-appearance: none;
+  border: 1px solid #999;
+}
+/* --------------------------------------------------------------
+   common elements/objects
+----------------------------------------------------------------- */
+/* lists */
+.h-list,
+.v-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.h-list li,
+.v-list li {
+  display: block;
+  float: left;
+}
+.h-list a,
+.v-list a {
+  display: block;
+}
+.v-list a {
+  width: 100%;
+}
+/*responsive  images - responsive images ie8 height fix */
+img {
+  height: auto;
+  max-width: 100%;
+}
+/* container elements including cf (clearfix) */
+html,
+body {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  position: relative;
+  font-family: "ff-meta-serif-web-pro", Georgia, serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+.site {
+  position: relative;
+  background: #BFBFBF;
+  color: #2d2d2d;
+  padding: 0px 0px 0px 0px;
+  transition: padding 0.3s ease;
+}
+.nav-open.site {
+  padding: 60px 0px 0px;
+}
+.container {
+  margin: 0 auto;
+  position: relative;
+  padding: 0px 0px;
+}
+@media screen and (min-width: 800px) {
+  .container {
+    padding: 0px 1vw;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .container {
+    padding: 0px 4vw;
+  }
+}
+.col {
+  display: block;
+  float: left;
+  width: 100%;
+}
+.cf {
+  *zoom: 1;
+}
+.container:after,
+.row:after,
+.col:after,
+.cf:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+h1,
+h2,
+h3 {
+  font-family: "brandon-grotesque", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  line-height: 1.4rem;
+  font-family: "brandon-grotesque", Arial, sans-serif;
+  color: #8c7758;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+h3 a:link,
+h3 a:visited {
+  color: inherit;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+h3 a:hover {
+  color: #8c7758;
+}
+h4 a:link,
+h4 a:visited,
+h5 a:link,
+h5 a:visited,
+h6 a:link,
+h6 a:visited,
+p a:link,
+p a:visited {
+  color: #8c7758;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+h4 a:hover,
+h5 a:hover,
+h6 a:hover,
+p a:hover {
+  color: #2d2d2d;
+}
+p {
+  font-size: 0.95rem;
+  line-height: 1.5rem;
+  margin: 0px 0px 1em;
+}
+sup {
+  font-size: 0.75em;
+  line-height: 0em;
+  position: relative;
+  top: -0.5em;
+}
+small {
+  font-size: 0.55em;
+  text-align: right;
+  opacity: 0.7;
+  position: relative;
+  top: -0.25rem;
+}
+img.alignleft {
+  display: block;
+  float: left;
+  margin: 0px 1em 1em 0px;
+}
+img.alignright {
+  display: block;
+  float: right;
+  margin: 0px 0px 1em 1em;
+}
+.btn:link,
+.btn:visited {
+  display: block;
+  float: left;
+  margin: 1em 0px 0px;
+  padding: 0.5em 1em;
+  text-align: center;
+  font-family: "brandon-grotesque", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #636363;
+  letter-spacing: 0px;
+  color: #eaeaea;
+  transition: background 1s ease, bottom 0.4s ease, top 0.4s ease;
+  position: relative;
+  top: 0px;
+  z-index: 1;
+}
+.btn span {
+  position: relative;
+  z-index: 3;
+}
+.btn:hover {
+  background: transparent;
+  top: 2px;
+}
+.btn:link:after,
+.btn:visited:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@offwhite+0,8c7758+33,772534+67,772534+67,2d2d2d+100 */
+  background: #eaeaea;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #eaeaea 0%, #8c7758 33%, #772534 67%, #772534 67%, #2d2d2d 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #eaeaea 0%, #8c7758 33%, #772534 67%, #772534 67%, #2d2d2d 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #eaeaea 0%, #8c7758 33%, #772534 67%, #772534 67%, #2d2d2d 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@offwhite', endColorstr='@lightgray', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.btn:hover:after {
+  opacity: 0.7;
+}
+@media screen and (min-width: 1200px) {
+  h1,
+  h2,
+  h3 {
+    font-size: 2.5vw;
+    line-height: 2rem;
+  }
+  h4,
+  h5,
+  h6 {
+    font-size: 1.5vw;
+    line-height: 2rem;
+  }
+  p {
+    font-size: 1.5vw;
+    line-height: 1.75rem;
+  }
+}
+/* -----------------------------------------------------------
+	this media query activates the grid
+	as well as any other elements, such
+	as aligned images. set the min-width 
+	to whatever best fits the design. 
+
+	default: 800px
+-------------------------------------------------------------- */
+@media screen and (min-width: 800px) {
+  .col {
+    margin: 0 0 0 0;
+  }
+  .col.span1 {
+    width: 8.333%;
+  }
+  .col.span2 {
+    width: 16.66%;
+  }
+  .col.span3 {
+    width: 25%;
+  }
+  .col.span4 {
+    width: 33.33%;
+  }
+  .col.span5 {
+    width: 41.66%;
+  }
+  .col.span6 {
+    width: 50%;
+  }
+  .col.span7 {
+    width: 58.33%;
+  }
+  .col.span8 {
+    width: 66.66%;
+  }
+  .col.span9 {
+    width: 75%;
+  }
+  .col.span10 {
+    width: 83.33%;
+  }
+  .col.span11 {
+    width: 91.66%;
+  }
+  .col.span12 {
+    width: 100%;
+  }
+  .float-left {
+    float: left;
+  }
+  .float-right {
+    float: right;
+  }
+  .float-clear {
+    clear: both;
+  }
+  img.alignleft {
+    float: left;
+    margin: 0 1em 1em 0;
+  }
+  img.alignright {
+    float: right;
+    margin: 0 0 1em 1em;
+  }
+}
+/* --------------------------------------------------------------
+	bxslider general required  styles
+----------------------------------------------------------------- */
+.bx-wrapper {
+  position: relative;
+  margin: 0 auto 60px;
+  padding: 0;
+  *zoom: 1;
+}
+.bx-wrapper img {
+  display: block;
+}
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  /*bottom: -30px;*/
+  width: 100%;
+}
+@font-face {
+  font-family: 'icomoon';
+  src: url('fonts/icomoon.eot?54jbhy');
+  src: url('fonts/icomoon.eot?54jbhy#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?54jbhy') format('truetype'), url('fonts/icomoon.woff?54jbhy') format('woff'), url('fonts/icomoon.svg?54jbhy#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: dark-grayscale;
+}
+.icon-twitter:before {
+  content: "\e900";
+}
+.icon-github:before {
+  content: "\e901";
+}
+.icon-linkedin:before {
+  content: "\e902";
+}
+/* --------------------------------------------------------------
+	bxslider general required  styles
+----------------------------------------------------------------- */
+.navigation h1 {
+  text-align: center;
+  font-size: 0.8em;
+  line-height: 0.7em;
+  padding: 1.5em 0px;
+  display: block;
+  z-index: 999;
+  position: relative;
+}
+.navigation h1 a:link,
+.navigation h1 a:visited {
+  font-family: "brandon-grotesque", Arial, sans-serif;
+  color: #eaeaea;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1em;
+  text-align: center;
+  transition: color 0.4s ease, background 0.4s ease;
+}
+.navigation h1 a:hover {
+  color: #772534;
+}
+.navigation {
+  width: 100%;
+  background: #2d2d2d;
+  padding: 0px 0px;
+  z-index: 999;
+  position: relative;
+}
+.main-navigation {
+  position: relative;
+  text-align: center;
+  counter-reset: ul;
+}
+.main-navigation ul {
+  display: block;
+  width: 100%;
+  margin: 0px;
+  background: #eaeaea;
+  position: relative;
+  text-align: left;
+  z-index: 999;
+}
+.main-navigation ul:after {
+  display: block;
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #eaeaea;
+  width: 100%;
+  z-index: 990;
+}
+.main-navigation li {
+  display: block;
+  float: left;
+  text-align: center;
+  margin: 0px 0px;
+  width: 33.333%;
+  counter-increment: li;
+}
+.main-navigation li a:before {
+  display: inline-table;
+  opacity: 0.2;
+  font-size: 1em;
+  font-weight: 300;
+  margin-right: 0.25em;
+  margin-left: -1em;
+  content: "0" counter(li);
+}
+.main-navigation li a:link,
+.main-navigation li a:visited {
+  font-family: "brandon-grotesque", Arial, sans-serif;
+  color: #eaeaea;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.6em;
+  font-weight: 800;
+  display: block;
+  text-align: center;
+  position: relative;
+  z-index: 999;
+  width: 100%;
+  padding: 1.5em 0px;
+  background: #772534;
+  opacity: 1;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+.main-navigation li:first-child a:link,
+.main-navigation li:first-child a:visited {
+  background: #8c7758;
+}
+.main-navigation li:last-child a:link,
+.main-navigation li:last-child a:visited {
+  background: #636363;
+}
+.main-navigation li a:hover,
+.main-navigation li:last-child a:hover,
+.main-navigation li:first-child a:hover {
+  background: transparent;
+  opacity: 0.6;
+}
+.main-navigation li a:hover:before {
+  opacity: 0.4;
+}
+.main-navigation li a:link:after,
+.main-navigation li a:visited:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@offwhite+0,8c7758+33,772534+67,772534+67,2d2d2d+100 */
+  background: #eaeaea;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #eaeaea 0%, #8c7758 33%, #772534 67%, #772534 67%, #2d2d2d 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #eaeaea 0%, #8c7758 33%, #772534 67%, #772534 67%, #2d2d2d 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #eaeaea 0%, #8c7758 33%, #772534 67%, #772534 67%, #2d2d2d 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@offwhite', endColorstr='@lightgray', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.main-navigation li a:hover:after {
+  opacity: 0.7;
+}
+.navigation .social {
+  text-align: right;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: inline-table;
+  z-index: 9999;
+  width: auto;
+}
+.navigation ul.social-icons {
+  border-top: 0px none transparent;
+  display: inline-block;
+  float: right;
+  text-align: right;
+  width: auto;
+  padding: 0.75em 1.5em 0px 0px;
+}
+.navigation ul.social-icons li {
+  float: none;
+  display: inline;
+}
+.navigation ul.social-icons li a:link,
+.navigation ul.social-icons li a:visited {
+  padding: 0px 0.25em;
+  font-size: 0.75em;
+  border-bottom: 0px none transparent;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  color: #eaeaea;
+  opacity: 1;
+  display: inline;
+  text-decoration: none;
+}
+.navigation ul.social-icons li a:hover {
+  border-bottom: 0px none transparent;
+  color: #772534;
+  opacity: 0.8;
+}
+@media screen and (min-width: 800px) {
+  .navigation h1 {
+    font-size: 1em;
+  }
+  .main-navigation li a:link,
+  .main-navigation li a:visited {
+    font-size: 0.8em;
+  }
+  .navigation .social {
+    position: relative;
+  }
+  .navigation ul.social-icons {
+    padding-top: 1.25em;
+  }
+  .navigation ul.social-icons li a:link,
+  .navigation ul.social-icons li a:visited {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .main-navigation ul {
+    width: 50%;
+  }
+}
+/* --------------------------------------------------------------
+	header
+----------------------------------------------------------------- */
+.header {
+  height: auto;
+  min-height: 20vh;
+  width: 100%;
+  position: relative;
+}
+.home .header {
+  min-height: auto;
+  height: auto;
+  width: 100%;
+  position: relative;
+}
+.header .bg {
+  display: block;
+  position: absolute;
+  width: 120%;
+  top: 0;
+  left: -10vw;
+  right: -10vw;
+  bottom: 0;
+  background: url(images/dog_bg_gray.jpg) center center no-repeat;
+  background-size: cover;
+  background-position: center center;
+  z-index: 1;
+}
+.home .header .bg {
+  top: 0vh;
+}
+.header .row .col {
+  position: relative;
+  z-index: 99;
+}
+.home .header .row .col {
+  height: auto;
+  padding: 5vh 5vw 10vh;
+}
+.header .col.span12 {
+  min-height: 15vh;
+  padding: 5vh 5vw 5vh;
+}
+.header .col.span12 h1 {
+  height: auto;
+  text-align: center;
+  line-height: 1.25em;
+  margin: 0px 0px 0.25em;
+  font-size: 6vw;
+  color: #eaeaea;
+  text-transform: uppercase;
+}
+.home .header .row .col.span6:first-of-type {
+  height: 0px;
+  padding: 0px 0px;
+}
+.header .col.span6 h1 {
+  height: auto;
+  line-height: 1.25em;
+  margin: 0px 0px 0.25em;
+  font-size: 10vw;
+}
+.header .col.span6 h4 {
+  font-size: 3vw;
+  line-height: 1.8rem;
+  text-transform: none;
+  color: #eaeaea;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+.header h1 {
+  color: #eaeaea;
+  font-weight: 700;
+}
+.header p {
+  font-family: "brandon-grotesque", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  margin: 10vh 0px 0px;
+  color: #eaeaea;
+}
+.header p a:link,
+.header p a:visited {
+  opacity: 0.6;
+  color: #eaeaea;
+  transition: all 0.2s ease;
+}
+.header p a:hover {
+  opacity: 1;
+}
+.header:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@offwhite+0,8c7758+33,772534+67,772534+67,2d2d2d+100 */
+  background: #eaeaea;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #eaeaea 0%, #8c7758 33%, #772534 67%, #772534 67%, #2d2d2d 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #eaeaea 0%, #8c7758 33%, #772534 67%, #772534 67%, #2d2d2d 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #eaeaea 0%, #8c7758 33%, #772534 67%, #772534 67%, #2d2d2d 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@offwhite', endColorstr='@lightgray', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+  opacity: 0.7;
+  z-index: 2;
+}
+@media screen and (min-width: 800px) {
+  .home .header {
+    min-height: 50vh;
+    height: 50vh;
+  }
+  .home .header .bg {
+    top: -10vh;
+  }
+  .header .bg {
+    background-size: 100% auto;
+  }
+  .home .header .row .col.span6:first-of-type {
+    height: auto;
+    padding: 10vh 5vw;
+  }
+  .home .header .row .col {
+    height: 50vh;
+    padding: 10vh 5vw;
+  }
+  .header .col.span12 {
+    padding: 10vh 5vw 5vh;
+  }
+  .header .col.span12 h1 {
+    font-size: 4vw;
+  }
+  .header .col.span6 h1 {
+    font-size: 5vw;
+  }
+  .header .col.span6 h4 {
+    font-size: 1.3vw;
+  }
+  .home .header:after {
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    opacity: 0.8;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .home .header {
+    min-height: 70vh;
+    height: 70vh;
+  }
+  .home .header .row .col {
+    height: 70vh;
+    padding: 10vh 5vw;
+  }
+}
+/* --------------------------------------------------------------
+	main
+----------------------------------------------------------------- */
+.main {
+  background: #eaeaea;
+}
+.main .title {
+  padding: 5em 2em 1em;
+  padding: 10vh 5vw 2vh;
+  text-align: center;
+}
+.main .title.brown {
+  background: #8c7758;
+  padding-bottom: 10vh;
+}
+.main .title.dark-gray {
+  background: #2d2d2d;
+}
+.main .title.red {
+  background: #772534;
+}
+.main .row.content,
+.main .row.prev-next {
+  padding: 0px 2em;
+  padding: 0px 5vw;
+}
+.main .row.prev-next {
+  margin: 0px 0px 2em;
+}
+.main .title h1 {
+  display: block;
+  float: left;
+  text-align: center;
+  color: #eaeaea;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.main .title p {
+  display: block;
+  clear: both;
+}
+.main .title.brown p a:link,
+.main .title.brown p a:visited {
+  color: #772534;
+}
+.main .title.brown p a:hover {
+  color: #eaeaea;
+}
+.home .main .col {
+  padding: 2em 2em 5em 0px;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.home .main .row:last-of-type {
+  border-bottom: 0px none transparent;
+}
+.main .arrow:link,
+.main .arrow:visited {
+  font-family: "brandon-grotesque", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 0.65em;
+  line-height: 4.5em;
+  text-transform: uppercase;
+  display: block;
+  float: left;
+  text-decoration: none;
+  position: relative;
+  padding-left: 1em;
+  letter-spacing: 0.25px;
+  opacity: 1;
+  transition: color 0.2s ease, padding-left 0.2s ease, letter-spacing 0.2s ease, opacity 0.2s ease;
+}
+.main .red .arrow:link,
+.main .red .arrow:visited {
+  color: #8c7758;
+}
+.main .dark-gray .arrow:link,
+.main .dark-gray .arrow:visited,
+.main .brown .arrow:link,
+.main .brown .arrow:visited {
+  color: #772534;
+}
+.main .arrow:hover {
+  opacity: 0.7;
+  padding-left: 1.5em;
+  color: #eaeaea;
+  letter-spacing: 0.75px;
+}
+.main .arrow:link:after,
+.main .arrow:visited:after {
+  display: block;
+  position: absolute;
+  right: -0.65em;
+  top: -1px;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  content: "\2794";
+  transition: right 0.2s ease;
+}
+.main .arrow:hover:after {
+  right: -0.75em;
+}
+.main .single-post h3 {
+  line-height: 2rem;
+  margin: 0px 0px 0.5rem;
+}
+.home .main .single-post h5 {
+  font-size: 1em;
+}
+.main .single-post h6 {
+  font-family: "ff-meta-serif-web-pro", Georgia, serif;
+  font-size: 0.7em;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.25px;
+  color: #2d2d2d;
+  text-transform: none;
+  opacity: 0.7;
+}
+.main .single-post .btn {
+  position: absolute;
+  bottom: 6vh;
+  left: 0px;
+  top: auto !important;
+  right: auto;
+}
+.main .single-post .btn:hover {
+  bottom: 5.75vh;
+}
+.main.writing .single-post .btn {
+  left: 3em;
+}
+.main.writing {
+  background: transparent;
+  position: relative;
+  z-index: 999;
+}
+.main.writing .section {
+  margin-top: -10vh;
+  display: block;
+}
+.main.writing .single-post {
+  background: #eaeaea;
+  margin: -5vh 0px 8vh;
+  padding: 2em 2em 5em;
+  position: relative;
+}
+.main.writing .single-post img.bio-image {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin-top: 0vw;
+  filter: sepia(0.2) brightness(95%);
+}
+.main .row.prev-next {
+  text-align: center;
+}
+.main .row.prev-next h3 {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0px auto 1em;
+}
+.main .row.prev-next ul {
+  display: table;
+  margin: 0px auto;
+  text-align: center;
+}
+.main .row.prev-next li {
+  display: inline;
+  text-align: center;
+  float: none;
+  list-style-type: none;
+}
+.main .row.prev-next li .btn {
+  float: none;
+  display: inline-block;
+  margin: 0px 1em;
+}
+.main .row.prev-next li .btn span {
+  font-size: 1.35rem;
+  font-weight: 300;
+}
+@media screen and (min-width: 540px) {
+  .main.writing .single-post img.bio-image {
+    width: 50vw;
+    max-width: 200px;
+    border-radius: 50%;
+    -webkit-shape-outside: circle();
+    shape-outside: circle();
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main .title h1 {
+    font-size: 3vw;
+  }
+  .main .arrow:link,
+  .main .arrow:visited {
+    font-size: 0.8vw;
+  }
+  .main.writing .section {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+  .main.writing .row.content .single-post {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+  .home .main .single-post h5 {
+    font-size: 2vh;
+  }
+  .main .single-post h6 {
+    font-size: 0.7em;
+    font-size: 0.9vw;
+  }
+  .main.writing .single-post .btn {
+    position: relative;
+    bottom: auto;
+    top: 0px !important;
+    left: auto;
+  }
+  .main.writing .single-post .btn:hover {
+    top: 2px !important;
+  }
+  .main.writing .single-post img.bio-image {
+    width: 20vw;
+    max-width: 300px;
+    margin-right: -15vw;
+    margin-top: -10vw;
+  }
+}
+/* --------------------------------------------------------------
+	footer
+----------------------------------------------------------------- */
+.footer {
+  padding: 5vh 5vw;
+  background: #2d2d2d;
+  color: #eaeaea;
+}
+.footer small {
+  opacity: 1;
+  color: #eaeaea;
+  font-size: 0.75em;
+}
+.footer a:link,
+.footer a:visited {
+  color: #8c7758;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer a:hover {
+  color: #636363;
+}

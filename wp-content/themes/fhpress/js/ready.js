@@ -12,15 +12,8 @@ jQuery(document).ready(function($) {
 	
 	// equal height columns
 	$.fn.setAllToMaxHeight = function(){
-		return this.height( Math.max.apply(this, $.map( this , function(e){ return $(e).height() }) ) );
-	}
-	
-	$('.pull-down .main-navigation .toggle').bind('click', function(e) {
-		e.preventDefault();
-		$('.site').toggleClass('nav-open');
-		console.log('nav-open');
-	});
-	
+		return this.height( Math.max.apply(this, $.map( this , function(e){ return $(e).height(); }) ) );
+	};	
 	
 
 	// DOM manipulation 
@@ -43,7 +36,7 @@ jQuery(document).ready(function($) {
     	} else {
 	    	 $('.home .header .bg').css({
 		    	 top:0
-	    	 })
+	    	 });
     	}
     	}
 	});
