@@ -12,7 +12,7 @@ function fhpress_destyle_descript() {
 	wp_dequeue_script( 'wp-embed' );
 	wp_dequeue_script( 'wp-emoji-release' );
 }
-add_action( 'wp_print_styles', 'fhpress_destyle_descript', 100 );
+add_action( 'wp_enqueue_scripts', 'fhpress_destyle_descript', 100 );
 
 // get rid of huge header image
 function fhpress_remove_custom_header() {
