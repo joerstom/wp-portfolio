@@ -309,6 +309,14 @@ img.alignright {
   float: right;
   margin: 0px 0px 1em 1em;
 }
+div.wp-caption {
+  max-width: 100%;
+  margin: 0px auto 1em;
+}
+div.wp-caption .wp-caption-text {
+  font-size: 0.8em;
+  font-style: italic;
+}
 .btn:link,
 .btn:visited {
   display: block;
