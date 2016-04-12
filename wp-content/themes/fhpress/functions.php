@@ -4,15 +4,6 @@ include('theme-functions/page-meta.php');
 
 add_filter('show_admin_bar', '__return_false');
 
-// get rid of scripts and styles we don't want
-function fhpress_destyle_descript() {
-	wp_dequeue_style( 'genericons' );
-	wp_dequeue_script( 'jquery' );
-	wp_dequeue_script( 'jquery-migrate' );
-	wp_dequeue_script( 'wp-embed' );
-	wp_dequeue_script( 'wp-emoji-release' );
-}
-add_action( 'wp_enqueue_scripts', 'fhpress_destyle_descript', 100 );
 
 // get rid of huge header image
 function fhpress_remove_custom_header() {
@@ -38,8 +29,6 @@ function post_link_attributes($output) {
     return str_replace('<a href=', '<a '.$code.' href=', $output);
 }
 
-
-
 // remove p tags from images
 function filter_ptags_on_images($content){
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
@@ -52,22 +41,50 @@ add_filter( 'xmlrpc_methods', function( $methods ) {
    return $methods;
 } );
 
+// Remove new emoji junk
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+// Remove new embed junk
+function disable_embeds_init() {
+
+    // Remove the REST API endpoint.
+    remove_action('rest_api_init', 'wp_oembed_register_route');
+
+    // Turn off oEmbed auto discovery.
+    // Don't filter oEmbed results.
+    remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
+
+    // Remove oEmbed discovery links.
+    remove_action('wp_head', 'wp_oembed_add_discovery_links');
+
+    // Remove oEmbed-specific JavaScript from the front-end and back-end.
+    remove_action('wp_head', 'wp_oembed_add_host_js');
+}
+add_action('init', 'disable_embeds_init', 9999);
+
 // add scripts and styles we DO want
 function fhpress_style_script() {
+	wp_dequeue_style( 'genericons' );
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', false, '1.11.3');
+	wp_enqueue_script('jquery');
+	
 	wp_enqueue_style( 
 		'fhpress-style', 
 		get_stylesheet_directory_uri() . '/style.min.css',
 		array() 
 	);
 	
-	wp_enqueue_script( 'jquery' );
+   
+	
 	wp_enqueue_script(
 		'fhpressplugins',
 		get_stylesheet_directory_uri() . '/js/final.min.js',
 		array( 'jquery' )
 	);
 }
-add_action( 'wp_enqueue_scripts', 'fhpress_style_script' );
+add_action( 'wp_enqueue_scripts', 'fhpress_style_script', 11 );
 
 //add excerpt to pages
 add_post_type_support('page', 'excerpt');
