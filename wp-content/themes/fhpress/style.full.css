@@ -683,6 +683,7 @@ pre code {
 .navigation ul.social-icons li {
   float: none;
   display: inline;
+  margin-left: 0.25em;
 }
 .navigation ul.social-icons li a:link,
 .navigation ul.social-icons li a:visited {
@@ -723,6 +724,8 @@ pre code {
   .main-navigation ul {
     width: 50%;
   }
+}
+@media screen and (min-width: 1300px) {
   .navigation ul.social-icons li a:link,
   .navigation ul.social-icons li a:visited {
     padding: 0px 0.25em;
