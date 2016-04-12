@@ -81,6 +81,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   
   // ============= // CREATE TASKS ========== //
-  grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'less', 'imagemin']); 
+  grunt.registerTask('default', ['jshint', 'uglify', 'less', 'cssmin', 'imagemin']); 
 
 };
