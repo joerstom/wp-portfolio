@@ -323,6 +323,7 @@ pre {
   padding: 1.5em;
 }
 pre code {
+  white-space: pre-wrap;
   font-size: 0.9em;
   font-family: monospace;
 }
