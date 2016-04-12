@@ -317,6 +317,11 @@ div.wp-caption .wp-caption-text {
   font-size: 0.8em;
   font-style: italic;
 }
+pre {
+  white-space: pre-wrap;
+  background: #636363;
+  padding: 0.5em;
+}
 .btn:link,
 .btn:visited {
   display: block;
