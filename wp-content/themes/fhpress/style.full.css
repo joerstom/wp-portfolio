@@ -990,10 +990,11 @@ pre code {
   position: absolute;
   right: -0.65em;
   top: -1px;
-  font-size: 20px;
+  font-size: 1.2em;
   font-family: Arial, sans-serif;
-  content: "\2794";
+  content: "\ \2794";
   transition: right 0.2s ease;
+  font-family: DejaVuSans, 'Arial Unicode MS', sans-serif;
 }
 .main .arrow:hover:after {
   right: -0.75em;
