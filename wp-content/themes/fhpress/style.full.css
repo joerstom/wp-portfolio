@@ -988,7 +988,7 @@ pre code {
 .main .arrow:visited:after {
   display: block;
   position: absolute;
-  right: -0.85em;
+  right: -1em;
   top: -1px;
   font-size: 1.2em;
   font-family: Arial, sans-serif;
@@ -997,7 +997,7 @@ pre code {
   font-family: DejaVuSans, 'Arial Unicode MS', sans-serif;
 }
 .main .arrow:hover:after {
-  right: -1em;
+  right: -1.2em;
 }
 .main .single-post h3 {
   line-height: 2rem;
