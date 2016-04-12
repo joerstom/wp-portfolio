@@ -240,7 +240,7 @@ h1,
 h2,
 h3 {
   font-family: "brandon-grotesque", Arial, sans-serif;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 2rem;
   line-height: 3rem;
 }
@@ -592,7 +592,7 @@ pre code {
   display: inline-table;
   opacity: 0.2;
   font-size: 1em;
-  font-weight: 300;
+  font-weight: 400;
   margin-right: 0.25em;
   margin-left: -1em;
   content: "0" counter(li);
@@ -941,7 +941,7 @@ pre code {
 .main .arrow:link,
 .main .arrow:visited {
   font-family: "brandon-grotesque", Arial, sans-serif;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 0.65em;
   line-height: 4.5em;
   text-transform: uppercase;
@@ -1062,7 +1062,7 @@ pre code {
 }
 .main .row.prev-next li .btn span {
   font-size: 1.35rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 @media screen and (min-width: 540px) {
   .main.writing .single-post img.bio-image {
